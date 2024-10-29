@@ -1,10 +1,10 @@
-package com.example.movieapp.movie_details
+package com.example.movieapp.movie_details.view_model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.movieapp.model.MovieRepository
+import com.example.movieapp.model.IMovieRepository
 
-class MovieDetailsViewModelFactory (private val repository: MovieRepository): ViewModelProvider.Factory {
+class MovieDetailsViewModelFactory (private val repository: IMovieRepository): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return if (modelClass.isAssignableFrom(MovieDetailsViewModel::class.java)) {
             MovieDetailsViewModel (repository) as T

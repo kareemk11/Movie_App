@@ -48,6 +48,16 @@ android {
         }
     }
 }
+val junitVersion = "4.13.2"
+val hamcrestVersion = "2.2"
+val archTestingVersion = "2.1.0"
+val robolectricVersion = "4.8"
+val androidXTestCoreVersion = "1.4.0"
+val androidXTestExtKotlinRunnerVersion = "1.1.5"
+val espressoVersion = "3.4.0"
+val coroutinesVersion = "1.6.4"
+val composeVersion = "1.5.1"
+val koinVersion = "3.4.0"
 
 dependencies {
 
@@ -68,6 +78,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation (libs.androidx.material.icons.extended)
+
 
     // Retrofit
     implementation(libs.retrofit)
@@ -84,6 +96,30 @@ dependencies {
     // Koin for Jetpack Compose
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
+
+    implementation (libs.lottie.compose)
+
+    // Unit testing
+    testImplementation("junit:junit:$junitVersion")
+    testImplementation("org.hamcrest:hamcrest:2.2")
+    testImplementation("org.hamcrest:hamcrest-library:2.2")
+    testImplementation("androidx.arch.core:core-testing:$archTestingVersion")
+    testImplementation("org.robolectric:robolectric:$robolectricVersion")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
+    // AndroidX Test - JVM testing
+    testImplementation("androidx.test:core-ktx:$androidXTestCoreVersion")
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation("androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
+    androidTestImplementation("androidx.arch.core:core-testing:$archTestingVersion")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+
+    implementation("io.insert-koin:koin-androidx-compose:$koinVersion") // Correct dependency
+    implementation("io.insert-koin:koin-android:$koinVersion") // Add Koin Android
+    implementation("io.insert-koin:koin-android-test:$koinVersion") // For Android testing
+    testImplementation("io.insert-koin:koin-test:$koinVersion") // Koin testing
+
 
 
 }

@@ -45,6 +45,7 @@ class MovieRemoteDataSource private constructor() : IMovieRemoteDataSource {
     override suspend fun getUpcomingMovies(page: Int): Flow<MovieResponse> {
         return flowOf(apiService.getUpcomingMovies(page = page))
     }
+
     override suspend fun getMovieDetails(movieId: Int): Flow<MovieDetailsResponse> {
         return flowOf(apiService.getMovieDetails(movieId = movieId))
     }
