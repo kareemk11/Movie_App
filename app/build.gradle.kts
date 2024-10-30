@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.movieapp"
+    namespace = "com.example.banquemisr.challenge05"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.movieapp"
+        applicationId = "com.example.banquemisr.challenge05"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
